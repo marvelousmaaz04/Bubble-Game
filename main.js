@@ -48,8 +48,8 @@ function runTimer() {
             document.querySelector("#pbtm").innerHTML = `<h1 id='finalScore'>Your Score is: ${gameScore}</h1>`;
             
              if (savedScore !== null) {
-                const savedScore = localStorage.getItem('score');
-                if(gameScore > savedScore){
+                
+                if(gameScore > Number(savedScore)){
                     localStorage.setItem('score', gameScore.toString());
                 }
                 
