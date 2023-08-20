@@ -49,8 +49,10 @@ function runTimer() {
             
              if (savedScore !== null) {
                 const savedScore = localStorage.getItem('score');
-                if(gameScore > savedScore)
-                localStorage.setItem('score', gameScore.toString());
+                if(gameScore > savedScore){
+                    localStorage.setItem('score', gameScore.toString());
+                }
+                
                 
               }
               
