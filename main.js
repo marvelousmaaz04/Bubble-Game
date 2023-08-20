@@ -9,6 +9,7 @@ document.querySelector("#highScore").textContent = parseInt(savedScore);
 
 
 function makeBubbles() {
+    
     var clutter = "";
     const bubbleContainer = document.querySelector('.bubble-container');
     
@@ -34,7 +35,7 @@ function makeBubbles() {
 }
 makeBubbles();
 
-var timer = 16;
+var timer = 60;
 document.querySelector("#timerInterval").textContent = timer;
 function runTimer() {
     var timerInterval = setInterval(function () {
@@ -45,7 +46,9 @@ function runTimer() {
         else {
             clearInterval(timerInterval);
             document.querySelector("#pbtm").innerHTML = `<h1 id='finalScore'>Your Score is: ${gameScore}</h1>`;
-            
+            document.querySelector("#finalScore").addEventListener("click",function(){
+                location.reload();
+            })
              // Replace with your actual game score value
             const savedScore = localStorage.getItem('score');
             
@@ -84,9 +87,7 @@ function increaseScore() {
 
 document.querySelector("#pbtm").addEventListener("click", function (details) {
     // alert("Bubble clicked!");
-    console.log(details.target);
-    console.log(details.target.textContent);
-    console.log(Number(details.target.textContent));
+   
     var clickednum = (Number(details.target.textContent));
     if (hitrn === clickednum) {
         increaseScore();
@@ -101,27 +102,9 @@ document.querySelector("#pbtm").addEventListener("click", function (details) {
 
 
 
-function calculateMaxBubbles() {
-    const bubbleContainer = document.querySelector('.bubble-container');
-    const bubbleWidth = 75; // Adjust as needed
-    const bubbleHeight = 75;
-    const containerWidth = bubbleContainer.clientWidth - 140;
-    const containerHeight = bubbleContainer.clientHeight - 140;
-    const maxBubblesHorizontal = Math.floor(containerWidth / bubbleWidth);
-    const maxBubblesVertical = Math.floor(containerHeight / bubbleHeight);
-    console.log(maxBubblesHorizontal);
-    console.log(maxBubblesVertical);
-    var totalBubbles = maxBubblesHorizontal * maxBubblesVertical;
-    return totalBubbles;
-}
 
 
 
-function updateBubbles() {
-    const totalBubbles = calculateMaxBubbles();
-    console.log(totalBubbles);
-    makeBubble(totalBubbles);
-}
 
 
 window.addEventListener('load', makeBubbles);
