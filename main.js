@@ -1,13 +1,12 @@
 var gameScore = 0;
 const savedScore = localStorage.getItem('score');
 
-if (savedScore !== null) {
-  const score = parseInt(savedScore);
-  document.querySelector("#highScore").textContent = score + "";
+
+if(savedScore !== null){
+document.querySelector("#highScore").textContent = parseInt(savedScore);
 }
-else{
-    document.querySelector("#highScore").textContent = "0";
-}
+
+
 
 function makeBubbles() {
     var clutter = "";
@@ -35,7 +34,7 @@ function makeBubbles() {
 }
 makeBubbles();
 
-var timer = 60;
+var timer = 16;
 document.querySelector("#timerInterval").textContent = timer;
 function runTimer() {
     var timerInterval = setInterval(function () {
@@ -47,15 +46,21 @@ function runTimer() {
             clearInterval(timerInterval);
             document.querySelector("#pbtm").innerHTML = `<h1 id='finalScore'>Your Score is: ${gameScore}</h1>`;
             
-             if (savedScore !== null) {
-                
-                if(gameScore > Number(savedScore)){
-                    localStorage.setItem('score', gameScore.toString());
-                }
-                
-                
+             // Replace with your actual game score value
+            const savedScore = localStorage.getItem('score');
+            
+            if (savedScore !== null) {
+              // Convert the saved score to an integer
+              const previousScore = parseInt(savedScore);
+            
+              if (gameScore > previousScore) {
+                // Update local storage with the new higher score
+                localStorage.setItem('score', gameScore.toString());
               }
-              
+            } else {
+              // No saved score, so set the current game score
+              localStorage.setItem('score', gameScore.toString());
+            }
             
 
         }
