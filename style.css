@@ -34,7 +34,7 @@ body {
 #ptop {
     height: 100px;
     max-width: 100%;
-    /* we need to set overflow hidden in parent in order to have border radius for the child */
+    
     background-color: green;
     display: flex;
     flex: 1;
@@ -48,8 +48,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* padding: 30px; */
-    /* overflow: visible; */
+    
 }
 
 .box {
@@ -64,11 +63,10 @@ body {
 #pbtm {
     width: 100%;
     height: calc(100% - 100px);
-    /* height: 800px; */
-    /* height: fit-content; */
+    
     padding: 20px;
     display: flex;
-    /* if the elements can brought down to the next line then they would be with wrap. default is no wrap */
+    
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -119,7 +117,7 @@ body {
     .elem {
         /* flex-basis: auto; Reset flex-basis for stacking */
         width: calc(50% - 10px);
-        /* Expand to full width */
+        
         font-size: 0.8em;
         display: flex;
         justify-content: space-between;
@@ -151,5 +149,5 @@ body {
         
     }
 
-    /* Adjust font sizes or other styles as needed */
+    
 }
