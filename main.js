@@ -2,8 +2,7 @@ var gameScore = 0;
 const savedScore = localStorage.getItem('score');
 
 if (savedScore !== null) {
-  const score = parseInt(savedScore); // Convert the saved string back to an integer
-  // Do something with the retrieved score value, such as displaying it on the page
+  const score = parseInt(savedScore);
   document.querySelector("#highScore").textContent = score + "";
 }
 else{
