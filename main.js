@@ -24,10 +24,7 @@ function makeBubbles() {
     }
 
     for (var i = 1; i <= num; i++) {
-        // backticks and single quotes both are used to store strings but `` are used for dynamic values (string interpolation)
-        // for single quotes
-        // var test = "hello" + 2 + 2;
-        // console.log(test)
+        
 
         var rn = Math.floor(Math.random() * 10);
         clutter += `<div class=bubble>${rn}</div>`
@@ -49,8 +46,7 @@ function runTimer() {
         else {
             clearInterval(timerInterval);
             document.querySelector("#pbtm").innerHTML = `<h1 id='finalScore'>Your Score is: ${gameScore}</h1>`;
-            // Assuming you have a variable called 'score' that holds the score value
-             // Replace with your actual score value
+            
              if (savedScore !== null) {
                 const savedScore = localStorage.getItem('score');
                 if(gameScore > savedScore)
@@ -78,11 +74,7 @@ function increaseScore() {
     gameScore += 10;
     document.querySelector("#score").textContent = gameScore + "";
 }
-// increaseScore();
 
-// Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside another element, and both elements have registered a handle to that event. It is a process that starts with the element that triggered the event and then bubbles up to the containing elements in the hierarchy. In event bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
-// we are adding click listener to the parent directly so that we need not create 100 listeners for each bubble
-// all the deatils of the bubble clicked will be passed in the func
 document.querySelector("#pbtm").addEventListener("click", function (details) {
     // alert("Bubble clicked!");
     console.log(details.target);
@@ -100,9 +92,7 @@ document.querySelector("#pbtm").addEventListener("click", function (details) {
     }
 })
 
-// console.log(test);
-// var test=""
-// undefined means no value and not defined means does not exist
+
 
 function calculateMaxBubbles() {
     const bubbleContainer = document.querySelector('.bubble-container');
@@ -126,6 +116,6 @@ function updateBubbles() {
     makeBubble(totalBubbles);
 }
 
-// Call updateBubbles when the page loads and when the window is resized
+
 window.addEventListener('load', makeBubbles);
 window.addEventListener('resize', makeBubbles);
