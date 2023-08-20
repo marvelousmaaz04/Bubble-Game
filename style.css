@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(145, 211, 145);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#panel {
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+#ptop {
+    height: 100px;
+    max-width: 100%;
+    /* we need to set overflow hidden in parent in order to have border radius for the child */
+    background-color: green;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30%;
+
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* padding: 30px; */
+    /* overflow: visible; */
+}
+
+.box {
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 700px;
+    color: green;
+}
+
+#pbtm {
+    width: 100%;
+    height: calc(100% - 100px);
+    /* height: 800px; */
+    /* height: fit-content; */
+    padding: 20px;
+    display: flex;
+    /* if the elements can brought down to the next line then they would be with wrap. default is no wrap */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    
+}
+
+#finalScore {
+    color: black;
+}
+
+.bubble {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.elem h2 {
+    font-weight: 500;
+}
+
+.bubble:hover {
+    cursor: pointer;
+    background-color: rgb(28, 77, 28);
+}
+
+@media (max-width: 1080px) {
+    #ptop {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        height: fit-content;
+        padding: 15px;
+    }
+    #pbtm{
+        height: calc(100%-125px);
+        
+    }
+
+    .elem {
+        /* flex-basis: auto; Reset flex-basis for stacking */
+        width: calc(50% - 10px);
+        /* Expand to full width */
+        font-size: 0.8em;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -5px;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding: -25px;
+    }
+
+    .box {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 700px;
+        color: green;
+        height: 30px;
+        /* min-width: 50px; */
+    }
+
+    #hitval, #timerInterval, #score {
+        padding: 10px 20px;
+    }
+    .bubble {
+        height: 45px;
+        width: 45px;
+        
+    }
+
+    /* Adjust font sizes or other styles as needed */
+}
